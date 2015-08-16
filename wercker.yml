@@ -2,7 +2,7 @@ box: wercker/default
 build:
     steps:
         - arjen/hugo-build:
-            theme: robus
+            theme: robust
             flags: --buildDrafts=true
 deploy:
     steps:
