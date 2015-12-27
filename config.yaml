@@ -3,7 +3,7 @@ LanguageCode: "ja-jp"
 Title: "後ろを向いて後退します.com"
 
 Params:
-    Author: "Ryoya Komatsu"
+    Author: "Michael"
     DateForm: "Mon, Jan 2, 2006"
     GoogleAnalyticsUserID: ""
     GravatarHash: ""
@@ -20,7 +20,7 @@ Params:
     Github: "RomTin"
     Description: "寒いところにある大学に通っています。\n恒常的に金欠。"
     Interests: "debian, windows, vim, web, CTF(baby), 競プロ, Scala, Haskell, Elixir, Python, Go, D, C++"
-    Others: "英語(English), 音楽, 麻雀, 車, バイク, 東方, ストライクウィッチーズ"
+    Others: "英語(English), 音楽, 麻雀, 車, バイク, 東方, ストライクウィッチーズ, アイドルマスター, ガールズ&パンツァー"
 
 Indexes:
     tag: "tags"
