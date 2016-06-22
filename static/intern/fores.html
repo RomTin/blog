@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>kickstarterLike for ES</title>
+
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="./css/ripples.min.css">
+    <!-- Script files -->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+
+<body>
+
+    <div class="navbar navbar-success">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-material-light-blue-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="http://romtin.github.io">Home</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-material-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#bg">Background</a></li>
+                </ul>
+
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control col-sm-8" placeholder="Search">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <center>
+                <h1>Nice Trip Route Recommend System (仮)</h1>
+                <h4>by 小松 凌也 (会津大学コンピュータ理工学部コンピュータ理工学科)</h4>
+            </center>
+        </div>
+
+        <div class="row" style="margin:20px 0px">
+            <div class="col-sm-8">
+                <img src="img/ev.png" style="width:100%; margin:10px" />
+            </div>
+            <div class="col-sm-4">
+                <font style="font-size:large">
+                    カーナビゲーションシステムと走行情報の収集システムを連携させたソーシャルネットワーキング的走行経路提案システム。現在の標準的なカーナビゲーションシステムにあるような経路提案機能に加えて、 <b>"車で楽しく旅ができる"</b> ような経路提案を可能にする。
+                </font>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-primary" id="about">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Background</h3>
+                </div>
+                <div class="panel-body">
+
+                    <h3>車の旅を楽しくすること</h3>
+                    日産リーフや三菱i-MiEV、米国テスラなどを始めとした電気自動車開発の発展や、自動運転・運転アシスト機能などの目覚ましい進化によって、人間が自動車を自分の意思で操作するということが将来的に消滅するのではないかと言われている昨今で、人間が車で旅をすること(ツーリング)に楽しさを見出すことの重要性を改めて見なおすべきなのではないかと考える。特に車が有効な移動手段であるような場所に出かける場合に、インターネットからの情報だけでは調べきることができないようなスポットの情報やルートの情報を容易に共有して車の旅を楽しくするような試みがあってはどうだろうかという考えに基いてこのプロジェクトを提案する。
+                    <br><br>
+                    最近の例で挙げると、茨城県大洗町を舞台とした某戦車アニメだろう。劇中に出てくる場面には実際に大洗町に存在する建造物やスポットなどが多数存在し、それらは一般的に "聖地" などと呼ばれている。大洗町の例は特殊で、その町全体がそのアニメを用いて町興しをしているということもあり、聖地を巡礼することに意味があるとする人が多くいる。アニメやドラマの聖地巡礼の例に限らず、旅行やツーリングにおいてもビッグデータを元としたスポットやルートのリコメンドをすることには大きな意味があると考える。
+
+                </div>
+            </div>
+            <center><img src="img/nav.png" style="width:50%" /></center>
+            <div class="panel panel-success" id="bg">
+                <div class="panel-heading">
+                    <h3 class="panel-title">About</h3>
+                </div>
+                <div class="panel-body">
+
+                    <h3>概要</h3>
+                    現在の市販車に搭載されている標準的なカーナビゲーションシステムの経路検索・提案システムは、料金や所要時間、渋滞情報、天候情報、道路状況(雪, 通行止, etc...)などの様々な情報を考慮しユーザーが要求する条件を満たす最善の経路を提案するものである。NTRRSにおいては、カーナビゲーションシステムの利用者から収集した <b>"良い旅情報"</b> を元に <b>"楽しく車で旅をできるルート"</b> をユーザーに対して提案することを可能とする。
+                    
+                    <h3>スポット登録・ログイン</h3>
+                    NTRRSの基本的な機能として、スポット登録機能がある。登録するスポットはユーザーの裁量に任せ、登録されたスポットはネットワークを介して定期的に全ユーザーのNTRRSに同期される。また、同一のスポットは２つ以上システムに対して登録することができない。ユーザーは登録されたスポットに対して、中心部から一定距離まで接近した場合にNTRRSを用いて "ログイン" をすることができる。ログインをするとNTRRSのサーバーに対してユーザーの情報(車種, 時刻, 速度, 使用経路, 目的, etc...)が送信され、その情報は次々にサーバーに蓄積、全NTRRSユーザーに "良い旅情報" の要素の一つとして共有されるようになる。システムの形としてはスポットログイン型のソーシャル・ネットワーキング・サービスのようなものである。
+
+                    <h3>良い旅情報</h3>
+                    ユーザーがスポットにログインするということにおいて、<b>"あるユーザーがあるルートを経由してそのスポットを通った"</b> という点に大きな意味があると考える。ユーザーがNTRRSに基づいてそのスポットを通ったこと、またはそのルートを使用したことに対するを評価したときに、母集団が大きくなればその評価値の集合は <b>"人気のスポット・ルート"</b> として有意なものとなる。この情報群はユーザーが旅先の情報に疎いほど有用となり、よく他のユーザーが訪れるスポットや初めて訪れるときにオススメのルートなどを容易にユーザーに対して提供することが可能となる。NTRRSは過去にそのスポットを訪れたユーザーや経由ルートの情報を元にユーザーに対してスポットやルートをリコメンドし、ユーザーのツーリングをより楽しくするための補助をする。
+
+                    <h3>システム</h3>
+                    標準的なカーナビゲーションシステムで提供される基本的な最低限の機能を前提とする。NTRRSのユーザーは任意のスポットに接近したときにログインすることができ、スポットが存在しない場合はユーザーの意思でスポットを登録しNTRRSを利用する全ユーザーに共有することができる。NTRRSを用いてスポットにログインしたとき、サーバーに対して「ログイン日時、ユーザー情報、ルート、目的、スポットに対するそのユーザーの評価」などの情報が送信、蓄積される。評価値を含んだそのスポットログイン情報は利用ユーザーが多くなるほど有意になり、 "人気のスポット・ルート" をユーザーに対して提供するための要素となる。ユーザーはある目的地(スポット)に行く際に経由するルートやスポットをNTRRSに対して条件を付けて要求することができ、NTRRSはそれに対して蓄積データをもとに最適なリコメンドを１つ以上する。さらにリピートログインや経由・訪問目的などのオプションの情報を付加することによってより最適なリコメンドをユーザーに対して行うことが可能となる。
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./js/material.js"></script>
+    <script src="./js/ripples.min.js"></script>
+    <script>
+$.material.init();
+        </script>
+
+    <!-- Dropdown.js -->
+    <link href="http://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet">
+    <script>
+$("#dropdown-menu select").dropdown();
+        </script>
+
+</body>
+
+</html>
