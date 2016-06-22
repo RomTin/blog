@@ -1,87 +1,58 @@
-<div class="col-md-12 col-sm-6 col-xs-12">
-<div class="text-center custom-partial">
-    {{ partial "rectangle-header" . }}
-</div>
-<section class="sidebar-bordered">
-    <h3>Profile</h3>
-    {{ if isset .Site.Params "GravatarHash" }}
-    <div id="profile">
-        <div class="text-center">
-            {{ if isset .Site.Params "Profpic" }}
-            <img id="profile-photo" src="/images/{{ .Site.Params.Profpic }}.png" alt="profile">
-            {{ end }}
-        </div>
-        <div class="data">
-            {{ if isset .Site.Params "Birth" }}
-            <span id="profile-birth">{{ .Site.Params.Birth }}</span>
-            {{ end }}
-            {{ if isset .Site.Params "UserName" }}
-            <h4 id="profile-username" class="post-title">{{ .Site.Params.UserName }}</h4>
-            {{ end }}
-            <div id="social-links">
-                {{ if isset .Site.Params "Facebook" }}
-                <a href="https://www.facebook.com/{{ .Site.Params.Facebook }}" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                {{ end }}
-                {{ if isset .Site.Params "Twitter" }}
-                <a href="https://twitter.com/{{ .Site.Params.Twitter }}" target="_blank"><i class="fa fa-twitter-square"></i></a>
-                {{ end }}
-                {{ if isset .Site.Params "Github" }}
-                <a href="https://github.com/{{ .Site.Params.Github }}" target="_blank"><i class="fa fa-github-square"></i></a>
-                {{ end }}
-            </div>
-            {{ if isset .Site.Params "Description" }}
-            <div id="profile-description">{{ .Site.Params.Description }}</div>
-            {{ end }}
-            {{ if isset .Site.Params "Interests" }}
-            <div id="profile-interests">
-                <dl>
-                    <dt>Interests</dt>
-                    <dd>{{ .Site.Params.Interests }}</dd>
-                    <dt>Other Interests</dt>
-                    <dd>{{ .Site.Params.Others }}, <a href="https://deresute.me/516074509/large">デレステ</a></dd>
-                </dl>
-            </div>
+<aside class="site">
 
-            {{ end }}
+  {{ if and .IsPage (ne .Params.toc false) }}
+  <section>
+    <header>Table Of Contents</header>
+    <div>{{ .TableOfContents }}</div>
+  </section>
+  {{ end }}
 
-            <!-- twitter timeline -->
-            <a class="twitter-timeline" href="https://twitter.com/mic_psm" data-widget-id="699041535254355968">@mic_psm's tweets</a>
-
-            <!-- ul id="profile-urls" class="post-tags"></ul -->
-        </div>
+  {{ if ne (len .Site.Menus) 0 }}
+  <section>
+    <header>Menu</header>
+    <div>
+      <nav class="p-menu">
+        {{ range .Site.Menus }}
+        <ul>
+          {{ range . }}
+          <li>
+            {{ if .HasChildren }}
+            <a href="#">{{ .Pre }} {{ .Name }}</a>
+            <ul>
+              {{ range .Children }}
+              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+              {{ end }}
+            </ul>
+          </li>
+          {{ else }}
+          <li><a href="{{ .URL }}">{{ .Pre }} {{ .Name }}</a></li>
+          {{ end }}
+          {{end}}
+        </ul>
+        {{end}}
+      </nav>
     </div>
-    {{ end }}
+  </section>
+  {{ end }}
 
-</section>
-</div>
-
-<div class="col-md-12 col-sm-6 col-xs-12">
-    <section>
-        <h3>Tags</h3>
-        {{ if .Site.Params.ShowTagCloud }}
-        <div id="tag-cloud" class="text-center">
-            {{ $baseurl := .Site.BaseURL }}
-            {{ range $name, $value := .Site.Taxonomies.tags }}
-            <!--a href="{{ $baseurl }}/tags/{{ $name | urlize }}" style="font-size: {{ add 8 (mul 3 $value.Count) }}px;"-->
-            <a href="{{ $baseurl }}/tags/{{ $name | urlize }}">{{ $name }}</a>
-            {{ end }}
-        </div>
-        {{ end }}
-    </section>
-    <section>
-        <!-- twitter share button -->
-        <a href="https://twitter.com/share" class="twitter-share-button" data-text="後ろを向いて後退します.com - Michael's blog ||">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        <!-- push7 button -->
-        <div class="p7-b" data-p7id="67f07d0ce30e4ff4b04793f33ea57554" data-p7c="r"></div>
-        <script src="https://romtin.app.push7.jp/static/button/p7.js"></script>
-    </section>
-</div>
-
-<div class="col-md-12 col-sm-6 col-xs-12">
-    <div class="text-center custom-partial">
-        {{ partial "rectangle-footer" . }}
+  <section>
+    <header>LatestPosts</header>
+    <div>
+      {{ range first 10 .Site.Pages }}
+      {{ .Render "li" }}
+      {{ end }}
     </div>
-</div>
+  </section>
 
+  {{ range $key, $value := .Site.Taxonomies }}
+  <section>
+    <header>{{ $key | singularize }}</header>
+    <div>
+      <ul>
+        {{ range first 10 $value.ByCount }}<li><a href="{{ $.Site.BaseURL}}{{ $key }}/{{ .Name | urlize }}">{{ .Name }}</a></li>{{ end }}
+      </ul>
+    </div>
+  </section>
+  {{ end }}
 
+</aside>
