@@ -1,0 +1,9 @@
+baseurl = "http://RomTin.github.io/"
+title = "後ろを向いて後退します.com"
+author = "Michael"
+copyright = "Copyright (c) 2015 - 2016, Michael; all rights reserved."
+canonifyurls = true
+paginate = 4
+
+[params]
+  disqusShortname = "" # optional

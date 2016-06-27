@@ -1,6 +1,9 @@
 BaseURL: "http://romtin.github.io"
 LanguageCode: "ja-jp"
 Title: "後ろを向いて後退します.com"
+Author: "Michael"
+CanonifyURLs: true
+Paginate: 4
 
 Params:
     Author: "Michael"
@@ -27,6 +30,6 @@ Indexes:
 
 permalinks:
     post: /blog/:year/:month/:day/:title/
-
+    
 MetadataFormat: "yaml"
 
