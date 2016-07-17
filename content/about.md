@@ -14,7 +14,7 @@ blurb: "A computer geek, born in countryside"
 recentposts: 5
 recentprojects: 5
 photo: "/images/momiji.png"
-cardheaderimage: "/images/default.jpg" #optional: default solid color if unset
+cardheaderimage: "/images/pfhead.png" #optional: default solid color if unset
 cardbackground: "#263238" #optional: card background color; only shows when no image specified
 ---
 

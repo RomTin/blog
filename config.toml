@@ -9,9 +9,9 @@ MetaDataFormat = "yaml"
 [params]
     author = "Michael"
     avatar = "/images/momiji.png"
-    background = "/images/inn.jpg"
+    background = "/images/background.png"
     description = "my diaries and poor notes about computer" #meta description
-    #image = "/images/momiji.png" #for frontpage profile card
+    image = "/images/cof.png" #for frontpage profile card
     website = "http://RomTin.github.io/"
     email = "micfall.romtin@gmail.com"
     twitter = "https://twitter.com/mic_psm"
