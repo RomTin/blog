@@ -3,7 +3,7 @@ build:
     steps:
         - arjen/hugo-build:
             version: "HEAD"
-            theme: mdl
+            theme: HugoMDL
             flags: --buildDrafts=true
 deploy:
     steps:
