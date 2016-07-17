@@ -1,9 +1,23 @@
 baseurl = "http://RomTin.github.io/"
+languageCode = "ja-jp"
 title = "後ろを向いて後退します.com"
-author = "Michael"
-copyright = "Copyright (c) 2015 - 2016, Michael; all rights reserved."
-canonifyurls = true
-paginate = 4
-
+theme = "HugoMDL"
+MetaDataFormat = "yaml"
+[permalinks]
+	page = "/:title/"
+	about = "/:filename/"
 [params]
-  disqusShortname = "" # optional
+    author = "Michael"
+    avatar = "/images/momiji.png"
+    background = "/images/inn.jpg"
+    description = "my diaries and poor notes about computer" #meta description
+    #image = "/images/momiji.png" #for frontpage profile card
+    website = "http://RomTin.github.io/"
+    email = "micfall.romtin@gmail.com"
+    twitter = "https://twitter.com/mic_psm"
+    github = "https://github.com/RomTin"
+    #linkedin = "https://linkedin.com/in/"
+    facebook = "https://facebook.com/pres.romtin"
+    copyrightyear = "2015"
+    frontpageposts = 4 #number of post cards to display on frontpage
+    
