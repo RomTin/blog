@@ -13,14 +13,15 @@ categories:
 tags:
     - "meta"
     - "project"
-"author": # used to fill out the project page. Unset fields are removed from page
-    name: "Firstname Lastname"
-    description: "Writer of stuff"
-    website: "http://example.com/"
-    email: "firstname@example.com"
-    twitter: "https://twitter.com/"
-    github: "https://github.com/"
-    image: "/images/avatar-64x64.png"
+
+"author":
+    name: "Michael"
+    description: ""
+    website: "http://RomTin.github.io"
+    email: "micfall.romtin@gmail.com"
+    twitter: "https://twitter.com/mic_psm"
+    github: "https://github.com/RomTin"
+    image: "/images/momiji.png"
 
 ---
 
