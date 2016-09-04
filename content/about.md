@@ -50,8 +50,7 @@ cardbackground: "#263238" #optional: card background color; only shows when no i
 * Motor cycle
 * IDOL M@STER
     * CINDERELLA GIRLS STARLIGHT STAGE
-        * iPad: 516074509<br>![main](http://deresute.me/516074509/medium)
-        * iPhone: 983758074<br>![sub](http://deresute.me/983758074/medium)
+        * 516074509<br>![main](http://deresute.me/516074509/medium)
     * MILLION LIVE
         * ID: 300000000000083345
 * Strike Witches
